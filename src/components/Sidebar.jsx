@@ -2,7 +2,9 @@
 const Sidebar = () => {
     return (
         <>
-            <div className="">Sidebar</div>
+            <section className="bg-red-900 p-20">
+                <button className="btn">Sidebar</button>
+            </section>
         </>
     )
 }
