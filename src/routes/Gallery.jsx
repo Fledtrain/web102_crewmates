@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { supabase } from "../client"
+import { Link } from "react-router-dom";
 
 const Gallery = () => {
     const [posts, setPosts] = useState(null);
@@ -7,7 +8,7 @@ const Gallery = () => {
     const getPosts = async () => {
         const { data } = await supabase
             .from("Character")
-            .select().order('created_at ', { ascending: true })
+            .select().order('created_at ', { descending: true })
         setPosts(data)
     }
 
@@ -25,6 +26,7 @@ const Gallery = () => {
                         <p>{post.age}</p>
                         <p>{post.class}</p>
                         <p>{post.strength}</p>
+                        <Link to={`/edit/${post.id}`}>Link</Link>
                     </div>
                 )
             })}
