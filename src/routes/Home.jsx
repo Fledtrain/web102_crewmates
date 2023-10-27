@@ -2,7 +2,7 @@
 const Home = () => {
     return (
         <>
-            <p className='text-red-900 hero'>Hello</p>
+            <p className='text-3xl hero'>Welcome to Fledtrain's Character Creation Tool</p>
         </>
     )
 }
