@@ -11,22 +11,52 @@ const Create = () => {
             strength: "0"
         }
     )
+    // For loading, alert, and created notifications
+    const [loading, setLoading] = useState(false)
+    const [alert, setAlert] = useState(false)
+    const [created, setCreated] = useState(false)
 
-    /** Function to create a post in the database
-     * @param {Event} e - Event object 
-     * 
-     */
-    const createPost = async (e) => {
+    const submitForm = async (e) => {
         e.preventDefault()
-        await supabase
-            .from("Character")
-            .insert([{ name: form.name, age: form.age, class: form.class, strength: form.strength }])
+        setLoading(true)
+        if (form.name === "" || form.age === "" || form.class === "") {
+            setAlert(true)
+            setLoading(false)
+
+            setTimeout(() => {
+                setAlert(false)
+            }, 2000)
+        }
+
+        else {
+            /** Function to create a post in the database
+             * @param {Event} e - Event object 
+            * 
+            */
+            const createPost = async (e) => {
+                await supabase
+                    .from("Character")
+                    .insert([{ name: form.name, age: form.age, class: form.class, strength: form.strength }])
+            }
+
+            await createPost()
+            setLoading(false)
+            setCreated(true)
+            setForm({ name: "", age: "", class: "", strength: "0" })
+        }
+
+        setTimeout(() => {
+            setCreated(false)
+        }, 2000)
     }
     return (
         <>
 
             <section className="hero ">
                 <form>
+                    <div className="p-2">
+                        {alert ? <div className="alert alert-error">Please fill in all fields</div> : null}
+                    </div>
                     <h1 className="hero p-5 text-3xl ">Create your Character</h1>
                     <div className="pb-2">
                         <input
@@ -63,7 +93,10 @@ const Create = () => {
                         <option value={"Barbarian"}>Barbarian</option>
                     </select>
                     <div className="flex justify-center pt-3">
-                        <button onClick={createPost} className="btn ">Create Post</button>
+                        {loading ?
+                            <div className="loading"></div> :
+                            <button onClick={submitForm} className="btn">Create Post</button>}
+                        {created && <div className="alert alert-success">Post Created</div>}
                     </div>
                 </form>
             </section>
