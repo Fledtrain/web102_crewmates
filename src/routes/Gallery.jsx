@@ -23,11 +23,11 @@ const Gallery = () => {
                 return (
                     <div key={post.id} className="card mt-2 ml-2 w-96 bg-neutral text-neutral-content">
                         <section className="card-body card-bordered">
-                            <h2 className="card-title">{post.name}</h2>
+                            <h2 className="card-title">Name: {post.name}</h2>
                             <div className="card-side">
-                                <p>{post.age}</p>
-                                <p>{post.class}</p>
-                                <p>{post.strength}</p>
+                                <p>Age: {post.age}</p>
+                                <p>Class: {post.class}</p>
+                                <p>Strength: {post.strength}</p>
                             </div>
                             <div className="card-actions justify-end">
                                 <Link to={`/edit/${post.id}`}>
