@@ -19,10 +19,10 @@ const Gallery = () => {
 
     return (
         <>
-            <div className="grid grid-cols-3 gap-4 ml-4 mt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ml-4 mt-4">
                 {posts && posts.map((post) => {
                     return (
-                        <div key={post.id} className="card w-80 bg-neutral text-neutral-content">
+                        <div key={post.id} className="card w-72 bg-neutral text-neutral-content">
                             <section className="card-body card-bordered">
                                 <h2 className="card-title">Name: {post.name}</h2>
                                 <div className="card-side">
