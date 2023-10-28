@@ -2,7 +2,7 @@
 
 Submitted by: Joey Whitehead
 
-This web app: **insert description**
+This web app: Crewmater Creator is a web app that allows users to create and manage a crew of crewmates. The app will allow users to create a crewmate, assign attributes to the crewmate, and view a list of all crewmates.
 
 Time spent: 4 hours spent in total
 
@@ -20,12 +20,12 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 - [ ] A crewmate can be given a category upon creation which restricts their attributes
-- [ ] The site displays summary statistics about a user's crew on their crew page 
+- [ ] The site displays summary statistics about a user's crew on their crew page
 - [ ] The site displays a custom "success" metric about a user's crew which changes the look of the crewmate list
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
+- [ ] List anything else that you added to improve the site's functionality!
 
 ## Video Walkthrough
 
@@ -34,7 +34,8 @@ Here's a walkthrough of implemented user stories:
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+
+GIF created with ...
 
 ## Notes
 
