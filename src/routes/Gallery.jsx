@@ -19,25 +19,27 @@ const Gallery = () => {
 
     return (
         <>
-            {posts && posts.map((post) => {
-                return (
-                    <div key={post.id} className="card mt-2 ml-2 w-96 bg-neutral text-neutral-content">
-                        <section className="card-body card-bordered">
-                            <h2 className="card-title">Name: {post.name}</h2>
-                            <div className="card-side">
-                                <p>Age: {post.age}</p>
-                                <p>Class: {post.class}</p>
-                                <p>Strength: {post.strength}</p>
-                            </div>
-                            <div className="card-actions justify-end">
-                                <Link to={`/edit/${post.id}`}>
-                                    <FaLink />
-                                </Link>
-                            </div>
-                        </section>
-                    </div>
-                )
-            })}
+            <div className="grid grid-cols-3 gap-4 ml-4 mt-4">
+                {posts && posts.map((post) => {
+                    return (
+                        <div key={post.id} className="card w-80 bg-neutral text-neutral-content">
+                            <section className="card-body card-bordered">
+                                <h2 className="card-title">Name: {post.name}</h2>
+                                <div className="card-side">
+                                    <p>Age: {post.age}</p>
+                                    <p>Class: {post.class}</p>
+                                    <p>Strength: {post.strength}</p>
+                                </div>
+                                <div className="card-actions justify-end">
+                                    <Link to={`/edit/${post.id}`}>
+                                        <FaLink />
+                                    </Link>
+                                </div>
+                            </section>
+                        </div>
+                    )
+                })}
+            </div>
         </>
     )
 }

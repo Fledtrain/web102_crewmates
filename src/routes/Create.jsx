@@ -33,7 +33,7 @@ const Create = () => {
              * @param {Event} e - Event object 
             * 
             */
-            const createPost = async (e) => {
+            const createPost = async () => {
                 await supabase
                     .from("Character")
                     .insert([{ name: form.name, age: form.age, class: form.class, strength: form.strength }])
