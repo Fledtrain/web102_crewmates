@@ -135,8 +135,8 @@ const Edit = () => {
                 </section>
                 <aside className="pt-5  ">
                     <form >
-                        <button className="btn mr-4" onClick={updateCharacter}>Edit Character</button>
-                        <button className="btn" onClick={deleteCharacter}>Delete Character</button>
+                        <button className="btn mr-4 btn-neutral" onClick={updateCharacter}>Edit Character</button>
+                        <button className="btn btn-neutral" onClick={deleteCharacter}>Delete Character</button>
                     </form>
                     {confirmEdit ? <div className="alert alert-success">Character Updated</div> : null}
                     {confirmDelete ?
@@ -144,7 +144,7 @@ const Edit = () => {
                             <aside className="pt-10">
                                 <div className="alert alert-error mb-10">Character Deleted</div>
                                 <Link to="/gallery">
-                                    <button className="btn">Go to Gallery</button>
+                                    <button className="btn btn-neutral">Go to Gallery</button>
                                 </Link>
                             </aside>
                         </>

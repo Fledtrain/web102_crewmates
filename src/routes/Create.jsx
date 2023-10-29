@@ -58,7 +58,7 @@ const Create = () => {
                     <div className="p-2">
                         {alert ? <div className="alert alert-error">Please fill in all fields</div> : null}
                     </div>
-                    <h1 className="hero p-5 text-3xl ">Create your Character</h1>
+                    <h1 className="hero p-5 text-3xl text-white">Create your Character</h1>
                     <div className="pb-2">
                         <input
                             onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -96,7 +96,7 @@ const Create = () => {
                     <div className="flex justify-center pt-3">
                         {loading ?
                             <div className="loading"></div> :
-                            <button onClick={submitForm} className="btn">Create Post</button>}
+                            <button onClick={submitForm} className="btn btn-neutral">Create Post</button>}
                     </div>
                     {created &&
                         <>
@@ -110,7 +110,7 @@ const Create = () => {
                     }
                     <aside className="mt-2 text-center">
                         <img src="./public/char1.png" className="w-72" alt="" />
-                        <p>This can be you peak GAMER!</p>
+                        <p className="text-white">This can be you peak GAMER!</p>
                     </aside>
                 </form>
             </section>
