@@ -13,7 +13,7 @@ const Edit = () => {
         name: "",
         age: "",
         class: "",
-        strength: "0"
+        strength: ""
     })
 
     const getPost = async () => {
@@ -31,14 +31,16 @@ const Edit = () => {
 
     const updateCharacter = async (e) => {
         e.preventDefault()
-        if (form.name === "") setForm({ name: post.name })
-        if (form.age === "") setForm({ age: post.age })
-        if (form.class === "") setForm({ class: post.class })
-        if (form.strength === "") setForm({ strength: post.strength })
+        const updatedData = {
+            name: form.name === "" ? post[0].name : form.name,
+            age: form.age === "" ? Number(post[0].age) : Number(form.age),
+            class: form.class === "" ? post[0].class : form.class,
+            strength: form.strength === "" ? post[0].strength : form.strength
+        };
 
         await supabase
             .from("Character")
-            .update({ name: form.name, age: form.age, class: form.class, strength: form.strength })
+            .update(updatedData)
             .eq("id", params.id)
 
         setConfirmEdit(true)
@@ -58,6 +60,8 @@ const Edit = () => {
         setConfirmDelete(true)
     }
 
+    console.log(form)
+
     return (
         <>
             <div className="p-10">
@@ -74,56 +78,61 @@ const Edit = () => {
                                     </div>
                                 </section>
                             </div>
-                            <section className="grid grid-cols-3">
-                                <div className="card w-80 bg-neutral text-neutral-content mt-2">
-                                    <section className="card-body">
-                                        <div className="card-side">
-                                            <form >
-                                                <input
-                                                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                                                    type="text"
-                                                    placeholder="Enter Name"
-                                                    className="input input-bordered max-w-xs" />
-                                            </form>
-                                        </div>
-                                        <div className="card-actions  justify-end">
-                                        </div>
-                                    </section>
-                                </div>
-                                <div className="card w-80 bg-neutral text-neutral-content mt-2">
-                                    <section className="card-body">
-                                        <div className="card-side">
-                                            <form >
-                                                <input
-                                                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                                                    type="text"
-                                                    placeholder="Enter Name"
-                                                    className="input input-bordered max-w-xs" />
-                                            </form>
-                                        </div>
-                                        <div className="card-actions  justify-end">
-                                        </div>
-                                    </section>
-                                </div>
-                                <div className="card w-80 bg-neutral text-neutral-content mt-2">
-                                    <section className="card-body">
-                                        <div className="card-side">
-                                            <form >
-                                                <input
-                                                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                                                    type="text"
-                                                    placeholder="Enter Name"
-                                                    className="input input-bordered max-w-xs" />
-                                            </form>
-                                        </div>
-                                        <div className="card-actions  justify-end">
-                                        </div>
-                                    </section>
-                                </div>
-                            </section>
                         </>
                     )
                 })}
+                <section className="grid grid-cols-3">
+                    <div className="card w-80 bg-neutral text-neutral-content mt-2">
+                        <section className="card-body">
+                            <div className="card-side">
+                                <form >
+                                    <input
+                                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                                        type="text"
+                                        placeholder="Enter Name"
+                                        className="input input-bordered max-w-xs" />
+                                </form>
+                            </div>
+                            <div className="card-actions  justify-end">
+                            </div>
+                        </section>
+                    </div>
+                    <div className="card w-80 bg-neutral text-neutral-content mt-2">
+                        <section className="card-body">
+                            <div className="card-side">
+                                <form >
+                                    <input
+                                        onChange={(e) => setForm({ ...form, age: e.target.value })}
+                                        type="text"
+                                        placeholder="Enter Age"
+                                        className="input input-bordered max-w-xs" />
+                                </form>
+                            </div>
+                            <div className="card-actions  justify-end">
+                            </div>
+                        </section>
+                    </div>
+                    <div className="card w-80 bg-neutral text-neutral-content mt-2 ">
+                        <section className="card-body">
+                            <div className="card-side">
+                                <form >
+                                    <span >Strength Level: {form.strength}</span>
+                                    <div className="flex w-64 p-2">
+                                        <input
+                                            onChange={(e) => setForm({ ...form, strength: e.target.value })}
+                                            type="range"
+                                            min="0"
+                                            max="10"
+                                            value={form.strength}
+                                            className="range" />
+                                    </div>
+                                </form>
+                            </div>
+                            <div className="card-actions  justify-end">
+                            </div>
+                        </section>
+                    </div>
+                </section>
                 <aside className="pt-5  ">
                     <form >
                         <button className="btn mr-4" onClick={updateCharacter}>Edit Character</button>

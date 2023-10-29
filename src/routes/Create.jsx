@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { supabase } from "../client"
+import { Link } from "react-router-dom"
 
 const Create = () => {
 
@@ -47,7 +48,7 @@ const Create = () => {
 
         setTimeout(() => {
             setCreated(false)
-        }, 2000)
+        }, 5000)
     }
     return (
         <>
@@ -96,8 +97,21 @@ const Create = () => {
                         {loading ?
                             <div className="loading"></div> :
                             <button onClick={submitForm} className="btn">Create Post</button>}
-                        {created && <div className="alert alert-success">Post Created</div>}
                     </div>
+                    {created &&
+                        <>
+                            <section className="mt-2 text-center">
+                                <div className="alert alert-success">Post Created</div>
+                                <Link to="/gallery">
+                                    <button className="btn btn-success mt-2 ">View your new Character here</button>
+                                </Link>
+                            </section>
+                        </>
+                    }
+                    <aside className="mt-2 text-center">
+                        <img src="./public/char1.png" className="w-72" alt="" />
+                        <p>This can be you peak GAMER!</p>
+                    </aside>
                 </form>
             </section>
         </>
