@@ -81,8 +81,8 @@ const Edit = () => {
                         </>
                     )
                 })}
-                <section className="grid grid-cols-3">
-                    <div className="card w-80 bg-neutral text-neutral-content mt-2">
+                <section className="grid grid-cols-3 ">
+                    <div className="card w-80 bg-neutral text-neutral-content mt-2 mr-2">
                         <section className="card-body">
                             <div className="card-side">
                                 <form >
