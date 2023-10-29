@@ -9,6 +9,7 @@ const Create = () => {
             name: "",
             age: "",
             class: "",
+            subClass: "",
             strength: "0"
         }
     )
@@ -37,13 +38,13 @@ const Create = () => {
             const createPost = async () => {
                 await supabase
                     .from("Character")
-                    .insert([{ name: form.name, age: form.age, class: form.class, strength: form.strength }])
+                    .insert([{ name: form.name, age: form.age, class: form.class, subclass: form.subClass, strength: form.strength }])
             }
 
             await createPost()
             setLoading(false)
             setCreated(true)
-            setForm({ name: "", age: "", class: "", strength: "0" })
+            setForm({ name: "", age: "", class: "", strength: "0", subClass: "" })
         }
 
         setTimeout(() => {
@@ -88,11 +89,24 @@ const Create = () => {
                         onChange={(e) => setForm({ ...form, class: e.target.value })}
                     >
                         <option value={'DEFAULT'} disabled selected>What Class do you want to be</option>
-                        <option value={"Mage"}>Mage</option>
+                        <option value={"Wizard"}>Wizard</option>
                         <option value={"Knight"}>Knight</option>
                         <option value={"Ranger"}>Ranger</option>
                         <option value={"Barbarian"}>Barbarian</option>
                     </select>
+                    {form.class === "Wizard" &&
+                        <>
+                            <select
+                                className="select select-bordered max-w-xs"
+                                onChange={(e) => setForm({ ...form, subClass: e.target.value })}
+                            >
+                                <option value={'DEFAULT'} disabled selected>What Sub Class do you want to be</option>
+                                <option value={"Mage"}>Arcane</option>
+                                <option value={"Knight"}>Necromancy</option>
+                            </select>
+                        </>
+                    }
+
                     <div className="flex justify-center pt-3">
                         {loading ?
                             <div className="loading"></div> :
