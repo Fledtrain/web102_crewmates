@@ -28,6 +28,7 @@ const Gallery = () => {
                                 <div className="card-side">
                                     <p>Age: {post.age}</p>
                                     <p>Class: {post.class}</p>
+                                    {post.subclass === "" ? null : <p>SubClass: {post.subclass}</p>}
                                     <p>Strength: {post.strength}</p>
                                 </div>
                                 <div className="card-actions justify-end">

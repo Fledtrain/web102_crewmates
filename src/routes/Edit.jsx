@@ -12,10 +12,11 @@ const Edit = () => {
     const [form, setForm] = useState({
         name: "",
         age: "",
-        class: "",
         strength: ""
     })
 
+    /** Function to get a character from the database
+     */
     const getPost = async () => {
         const { data } = await supabase
             .from("Character")
@@ -23,18 +24,16 @@ const Edit = () => {
             .eq("id", params.id)
         setPost(data)
     }
-    useEffect(() => {
-        getPost()
-    }, [])
 
 
-
+    /** Function to update a character in the database
+     * @param {Event} e - Event object
+     */
     const updateCharacter = async (e) => {
         e.preventDefault()
         const updatedData = {
             name: form.name === "" ? post[0].name : form.name,
             age: form.age === "" ? Number(post[0].age) : Number(form.age),
-            class: form.class === "" ? post[0].class : form.class,
             strength: form.strength === "" ? post[0].strength : form.strength
         };
 
@@ -47,9 +46,12 @@ const Edit = () => {
 
         setTimeout(() => {
             setConfirmEdit(false)
-        }, 1500)
+        }, 3500)
     }
 
+    /** Function to delete a character in the database
+     * @param {Event} e - Event object 
+     */
     const deleteCharacter = async (e) => {
         e.preventDefault()
         await supabase
@@ -60,7 +62,9 @@ const Edit = () => {
         setConfirmDelete(true)
     }
 
-    console.log(form)
+    useEffect(() => {
+        getPost()
+    }, [])
 
     return (
         <>
@@ -138,13 +142,23 @@ const Edit = () => {
                         <button className="btn mr-4 btn-neutral" onClick={updateCharacter}>Edit Character</button>
                         <button className="btn btn-neutral" onClick={deleteCharacter}>Delete Character</button>
                     </form>
-                    {confirmEdit ? <div className="alert alert-success">Character Updated</div> : null}
+                    {confirmEdit ?
+                        <>
+                            <aside className="pt-10">
+                                <div className="alert alert-success mb-10">Character Updated</div>
+                                <Link to="/gallery">
+                                    <button className="btn btn-neutral">Go to Gallery to see changes</button>
+                                </Link>
+                            </aside>
+                        </>
+
+                        : null}
                     {confirmDelete ?
                         <>
                             <aside className="pt-10">
                                 <div className="alert alert-error mb-10">Character Deleted</div>
                                 <Link to="/gallery">
-                                    <button className="btn btn-neutral">Go to Gallery</button>
+                                    <button className="btn btn-neutral">Go to Gallery to see changes</button>
                                 </Link>
                             </aside>
                         </>
