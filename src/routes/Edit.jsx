@@ -132,15 +132,15 @@ const Edit = () => {
                                     </div>
                                 </form>
                             </div>
-                            <div className="card-actions  justify-end">
+                            <div className="card-actions justify-end">
                             </div>
                         </section>
                     </div>
                 </section>
-                <aside className="pt-5  ">
+                <aside className="pt-5">
                     <form >
                         <button className="btn mr-4 btn-neutral" onClick={updateCharacter}>Edit Character</button>
-                        <button className="btn btn-neutral" onClick={deleteCharacter}>Delete Character</button>
+                        <button className="btn btn-error" onClick={deleteCharacter}>Delete Character</button>
                     </form>
                     {confirmEdit ?
                         <>

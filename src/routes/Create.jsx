@@ -29,11 +29,9 @@ const Create = () => {
                 setAlert(false)
             }, 2000)
         }
-        else if (form.class === "Knight" || form.class === "Ranger" || form.class === "Barbarian") {
-            setForm({ ...form, subClass: "" })
-        }
 
         else {
+
             /** Function to create a post in the database
              * @param {Event} e - Event object 
             * 
@@ -106,6 +104,42 @@ const Create = () => {
                                 <option value={'Arcane'} disabled selected>What Sub Class do you want to be</option>
                                 <option value={"Arcane"}>Arcane</option>
                                 <option value={"Necromancer"}>Necromancer</option>
+                            </select>
+                        </>
+                    }
+                    {form.class === "Knight" &&
+                        <>
+                            <select
+                                className="select select-bordered max-w-xs"
+                                onChange={(e) => setForm({ ...form, subClass: e.target.value })}
+                            >
+                                <option value={'Echo Knight'} disabled selected>What Sub Class do you want to be</option>
+                                <option value={"Echo Knight"}>Echo Knight</option>
+                                <option value={"Psi Warrior"}>Psi Warrior</option>
+                            </select>
+                        </>
+                    }
+                    {form.class === "Ranger" &&
+                        <>
+                            <select
+                                className="select select-bordered max-w-xs"
+                                onChange={(e) => setForm({ ...form, subClass: e.target.value })}
+                            >
+                                <option value={'Beast Master'} disabled selected>What Sub Class do you want to be</option>
+                                <option value={"Beast Master"}>Beast Master</option>
+                                <option value={"SwarmKeeper"}>SwarmKeeper</option>
+                            </select>
+                        </>
+                    }
+                    {form.class === "Barbarian" &&
+                        <>
+                            <select
+                                className="select select-bordered max-w-xs"
+                                onChange={(e) => setForm({ ...form, subClass: e.target.value })}
+                            >
+                                <option value={'Berserker'} disabled selected>What Sub Class do you want to be</option>
+                                <option value={"Berserker"}>Berserker</option>
+                                <option value={"Beast Barbarian"}>Beast Barbarian</option>
                             </select>
                         </>
                     }
