@@ -5,6 +5,8 @@ import Create from './routes/Create'
 import Sidebar from './components/Sidebar'
 import Gallery from './routes/Gallery'
 import Edit from './routes/Edit'
+import DetailsPage from './routes/DetailsPage'
+
 
 function App() {
 
@@ -18,6 +20,7 @@ function App() {
             <Route path="/create" element={<Create />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/edit/:id" element={<Edit />} />
+            <Route path="/details/:id" element={<DetailsPage />} />
           </Routes>
         </div>
       </BrowserRouter>

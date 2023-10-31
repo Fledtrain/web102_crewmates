@@ -31,11 +31,18 @@ const Gallery = () => {
                                     {post.subclass === "" ? null : <p>SubClass: {post.subclass}</p>}
                                     <p>Strength: {post.strength}</p>
                                 </div>
-                                <div className="card-actions justify-end">
-                                    <Link to={`/edit/${post.id}`}>
-                                        <FaLink />
-                                    </Link>
-                                </div>
+                                <section className="flex justify-between mt-4">
+                                    <div className="card-actions">
+                                        <Link to={`/edit/${post.id}`}>
+                                            <button className="btn btn-square">Edit</button>
+                                        </Link>
+                                    </div>
+                                    <div className="card-actions">
+                                        <Link to={`/details/${post.id}`}>
+                                            <button className="btn btn-square">View</button>
+                                        </Link>
+                                    </div>
+                                </section>
                             </section>
                         </div>
                     )

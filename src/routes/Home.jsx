@@ -11,7 +11,7 @@ const Home = () => {
                     </p>
                 </section>
                 <aside className="flex justify-center mt-5">
-                    <img src="./public/Char2.webp" className="w-96 " alt="Stock Character" />
+                    <img src="/Char2.webp" className="w-96 " alt="Stock Character" />
                 </aside>
             </div>
         </>
