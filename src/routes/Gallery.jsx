@@ -47,6 +47,23 @@ const Gallery = () => {
                         </div>
                     )
                 })}
+                {posts && posts.length === 0 && (
+                    <div className="card w-80 bg-neutral text-neutral-content">
+                        <section className="card-body card-bordered">
+                            <h2 className="card-title text-3xl">No characters</h2>
+                            <div className="card-side">
+                                <p>There are no characters in the database.</p>
+                            </div>
+                            <section className="flex justify-between mt-4">
+                                <div className="card-actions">
+                                    <Link to={`/create`}>
+                                        <button className="btn">Create</button>
+                                    </Link>
+                                </div>
+                            </section>
+                        </section>
+                    </div>
+                )}
             </div>
         </>
     )

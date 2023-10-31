@@ -29,6 +29,9 @@ const Create = () => {
                 setAlert(false)
             }, 2000)
         }
+        else if (form.class === "Knight" || form.class === "Ranger" || form.class === "Barbarian") {
+            setForm({ ...form, subClass: "" })
+        }
 
         else {
             /** Function to create a post in the database
@@ -100,9 +103,9 @@ const Create = () => {
                                 className="select select-bordered max-w-xs"
                                 onChange={(e) => setForm({ ...form, subClass: e.target.value })}
                             >
-                                <option value={'DEFAULT'} disabled selected>What Sub Class do you want to be</option>
-                                <option value={"Mage"}>Arcane</option>
-                                <option value={"Knight"}>Necromancy</option>
+                                <option value={'Arcane'} disabled selected>What Sub Class do you want to be</option>
+                                <option value={"Arcane"}>Arcane</option>
+                                <option value={"Necromancer"}>Necromancer</option>
                             </select>
                         </>
                     }
