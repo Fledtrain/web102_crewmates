@@ -60,7 +60,7 @@ const Create = () => {
                     <div className="p-2">
                         {alert ? <div className="alert alert-error">Please fill in all fields</div> : null}
                     </div>
-                    <h1 className="hero p-5 text-3xl text-white">Create your Character</h1>
+                    <h1 className="hero p-5 text-4xl text-white">Create your Character</h1>
                     <div className="pb-2">
                         <input
                             onChange={(e) => setForm({ ...form, name: e.target.value })}

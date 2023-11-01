@@ -14,6 +14,10 @@ const Sidebar = () => {
                 <Link to="/gallery">
                     <button className="btn btn-neutral m-2 ">Gallery</button>
                 </Link>
+                <div>
+
+                    <img src="/Char2.webp" className="w-44 mt-28" alt="This could be your character" />
+                </div>
             </nav>
         </>
     )
