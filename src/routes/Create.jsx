@@ -143,7 +143,6 @@ const Create = () => {
                             </select>
                         </>
                     }
-
                     <div className="flex justify-center pt-3">
                         {loading ?
                             <div className="loading"></div> :
