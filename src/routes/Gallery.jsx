@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { supabase } from "../client"
 import { Link } from "react-router-dom";
-import { FaLink } from "react-icons/fa";
+
 
 const Gallery = () => {
     const [posts, setPosts] = useState(null);
