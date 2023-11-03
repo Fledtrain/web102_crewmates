@@ -34,9 +34,12 @@ const DetailsPage = () => {
                                 <p className="text-3xl mt-6">Class: {post?.class}</p>
                                 {post?.subclass === "" ? null : <p className="text-3xl mt-6">SubClass: {post?.subclass}</p>}
                                 <p className="text-3xl mt-6">Strength: {post?.strength}</p>
-
+                                {post?.strength > 6 ?
+                                    <p className="text-4xl mt-6">This character is strong! </p>
+                                    : <p className="text-3xl mt-6">This character is weak!</p>
+                                }
                                 <Link to={`/edit/${params.id}`}>
-                                <button className="btn mt-10">Wanna Edit this Character?</button>
+                                    <button className="btn mt-10">Wanna Edit this Character?</button>
                                 </Link>
                             </section>
                         </>
