@@ -4,7 +4,7 @@ Submitted by: Joey Whitehead
 
 This web app: Crewmater Creator is a web app that allows users to create and manage a crew of crewmates. The app will allow users to create a crewmate, assign attributes to the crewmate, and view a list of all crewmates.
 
-Time spent: 4 hours spent in total
+Time spent: 7 hours spent in total
 
 ## Required Features
 
@@ -25,21 +25,22 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you added to improve the site's functionality!
+- [x] Easy Navigation between pages
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./public/project7.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 
-GIF created with ...
+GIF created with LICEcap
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+
+I had a challenge at the beginning of connecting Supabase to my application but after reading the docs I was able to figure it out and get it working.
 
 ## License
 
