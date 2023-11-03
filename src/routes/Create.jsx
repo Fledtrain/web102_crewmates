@@ -159,7 +159,7 @@ const Create = () => {
                         </>
                     }
                     <aside className="mt-2 text-center">
-                        <img src="./public/char1.png" className="w-96 " alt="Peak Gamer" />
+                        <img src="/Char1.png" className="w-96 " alt="Peak Gamer" />
                         <p className="text-white ">This can be you peak GAMER!</p>
                     </aside>
                 </form>
