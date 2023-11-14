@@ -9,7 +9,8 @@ const Gallery = () => {
     const getPosts = async () => {
         const { data } = await supabase
             .from("Character")
-            .select().order('created_at ', { descending: true })
+            .select("*")
+            .order("created_at", { ascending: false })
         setPosts(data)
     }
 
