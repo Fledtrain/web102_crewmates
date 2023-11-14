@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom"
 
+/** Returns the sidebar component
+ * @returns Sidebar component
+ */
 const Sidebar = () => {
     return (
         <>

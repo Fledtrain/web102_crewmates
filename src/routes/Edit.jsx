@@ -3,7 +3,9 @@ import { supabase } from "../client"
 import { useState } from "react"
 import { useEffect } from "react"
 
-
+/** Returns the edit route
+ * @returns Edit route
+ */
 const Edit = () => {
     const params = useParams()
     const [confirmEdit, setConfirmEdit] = useState(false)

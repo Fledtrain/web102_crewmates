@@ -2,6 +2,9 @@ import { useState } from "react"
 import { supabase } from "../client"
 import { Link } from "react-router-dom"
 
+/** Returns the create component 
+ * @returns Create component
+ */
 const Create = () => {
 
     const [form, setForm] = useState(
@@ -18,6 +21,10 @@ const Create = () => {
     const [alert, setAlert] = useState(false)
     const [created, setCreated] = useState(false)
 
+    /** Function to submit the form
+     * @param {Event} e - Event object
+     * @returns Submit form 
+     */
     const submitForm = async (e) => {
         e.preventDefault()
         setLoading(true)
@@ -33,8 +40,7 @@ const Create = () => {
         else {
 
             /** Function to create a post in the database
-             * @param {Event} e - Event object 
-            * 
+            *  @returns Created post
             */
             const createPost = async () => {
                 await supabase

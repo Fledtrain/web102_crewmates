@@ -2,12 +2,15 @@ import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { supabase } from "../client"
 
-
+/** 
+ * @returns DetailsPage route
+ */
 const DetailsPage = () => {
     const params = useParams()
     const [post, setPost] = useState(null)
 
     /** Function to get a character from the database
+     * @returns Character
      */
     const getPost = async () => {
         const { data } = await supabase

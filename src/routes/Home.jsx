@@ -1,4 +1,6 @@
-
+/**
+ * @returns Home route
+ */
 const Home = () => {
     return (
         <>

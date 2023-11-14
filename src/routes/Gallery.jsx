@@ -2,10 +2,15 @@ import { useEffect, useState } from "react"
 import { supabase } from "../client"
 import { Link } from "react-router-dom";
 
-
+/** 
+ * @returns Gallery route
+ */
 const Gallery = () => {
     const [posts, setPosts] = useState(null);
 
+    /**
+     * @returns All the Characters from the DB
+     */
     const getPosts = async () => {
         const { data } = await supabase
             .from("Character")
